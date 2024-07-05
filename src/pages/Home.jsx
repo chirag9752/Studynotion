@@ -13,7 +13,7 @@ import ExploreMore from '../components/core/HomePage/ExlporeMore';
 
 const Home = () => {
   return (
-    <div>
+    <div className='w-screen'>
         {/* section 1 */}
 
         <div className='mx-auto relative flex flex-col w-11/12 items-center justify-between text-white'>
@@ -24,7 +24,7 @@ const Home = () => {
                     <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px]
                      group-hover:bg-richblack-900'>
                         <p>Become an Instructor</p>
-                        <FaArrowRight />
+                        <FaArrowRight/>
                     </div>
                 </div>
             </Link>
@@ -48,7 +48,7 @@ const Home = () => {
                 </CTAButton>
             </div>
 
-            <div className = 'shadow-blue-200 mx-3 my-12 '>
+            <div className = 'shadow-blue-200 mx-3 my-12 w-11/12'>
                 <video
                 muted
                 loop
@@ -58,7 +58,7 @@ const Home = () => {
             </div>
 
             {/* Code Section 1 */}
-            <div>
+            <div className='w-11/12'>
                 <CodeBlocks 
                     position = {"lg :flex-row"}
                     heading = {
@@ -93,7 +93,7 @@ const Home = () => {
             </div>
 
             {/* code section 2 */}
-            <div>
+            <div className='w-11/12'>
                 <CodeBlocks 
                     position = {"lg: flex-row-reverse"}
                     heading = {
@@ -119,17 +119,12 @@ const Home = () => {
                             active : false
                         }
                     }
-
                     codeblock = {`<!DOCTYPE html>\n<html>\n <head><title>Example</title>\n<link rel = "styleSheet" href = "style.css">\n</head>\n<body>\n<h1><a href = "/">Header</a>\n</h1>\n<nav><a href = "one/">One</a><a href = "two/">Two</a>\n<a href = "three/">Three</a>\n</nav>`}
                     codeColor = {"text-yellow-25"}
-
                 />
             </div>
 
-
             <ExploreMore/>
-
-
 
         </div>
 
@@ -213,11 +208,6 @@ const Home = () => {
 }
 
 export default Home
-
-
-
-
-
 
 
 

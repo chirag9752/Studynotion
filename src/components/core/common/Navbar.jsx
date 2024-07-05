@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 import logo from "../../../assets/Logo/Logo-Full-Light.png";
 import {NavbarLinks} from "../../../data/navbar-links";
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { apiConnector } from "../../../services/apiconnector";
-import { categories } from "../../../services/api";
+// import { apiConnector } from "../../../services/apiconnector";
+// import { categories } from "../../../services/api";
 import { IoChevronDown } from "react-icons/io5";
 
 const Navbar = () => {
@@ -55,6 +55,8 @@ const Navbar = () => {
            <img src= {logo} width={160} height={42} loading="lazy" alt="logoimg"/>
         </Link>
 
+        {/* Nav links */}
+
         <nav>
             <ul className="flex gap-x-6 text-richblack-25">
                 {
@@ -102,7 +104,7 @@ const Navbar = () => {
         </nav>
 
         {/* login signup button */}
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-4 items-center text-white">
             {
                 user && user?.accountType !== "Instructor" && (
                     <Link to= "/dashboard/cart">
