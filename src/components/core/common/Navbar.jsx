@@ -7,6 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 // import { apiConnector } from "../../../services/apiconnector";
 // import { categories } from "../../../services/api";
 import { IoChevronDown } from "react-icons/io5";
+import ProfileDropDown from "../Auth/ProfileDropDown";
 
 const Navbar = () => {
     const sublink = [
@@ -68,7 +69,10 @@ const Navbar = () => {
                             <p>{link.title}</p>
                             <IoChevronDown />
 
-                            <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
+                            <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex
+                             w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg
+                              bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 
+                              group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
 
                             <div className= 'absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5'></div>
 
@@ -97,17 +101,20 @@ const Navbar = () => {
                         </li>
                         
                     ))
+                    
                 }
             </ul>
            
 
         </nav>
+        
 
-        {/* login signup button */}
-        <div className="flex gap-x-4 items-center text-white">
+        {/* login signup dashboard */}
+
+        <div className="flex gap-x-4 items-center">
             {
                 user && user?.accountType !== "Instructor" && (
-                    <Link to= "/dashboard/cart">
+                    <Link to= "/dashboard/cart" className="relative">
                         <AiOutlineShoppingCart />
                         {
                             totalItems > 0 && (
@@ -135,8 +142,14 @@ const Navbar = () => {
                     </Link>
                 )
             }
+            {
+                token !== null && <ProfileDropDown/>
+            }
         </div>
+        
      </div>
+
+
     </div>
     )
 }
